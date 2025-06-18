@@ -1,7 +1,6 @@
 app:
   appLabel: education
   replicaCount: 3
-  restartPolicy: Always
 
 image:
   repository: docker.io/skitten11/education
