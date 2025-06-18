@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}
   labels:
-    "k8s-app": {{ .Values.appLabel }}
+    "k8s-app": {{ .Values.app.appLabel }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.app.replicaCount }}
   selector:
     matchLabels:
-      "k8s-app": {{ .Values.appLabel }}
+      "k8s-app": {{ .Values.app.appLabel }}
   template:
     metadata:
       labels:
-        "k8s-app": {{ .Values.appLabel }}
+        "k8s-app": {{ .Values.app.appLabel }}
       name: {{ .Release.Name }}
     spec:
       containers:
       - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: {{ .Release.Name }}
-      restartPolicy: {{ .Values.restartPolicy }}
+      restartPolicy: {{ .Values.app.restartPolicy }}
         
