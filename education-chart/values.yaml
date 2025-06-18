@@ -1,0 +1,14 @@
+app:
+  appLabel: education
+  replicaCount: 1
+  restartPolicy: Always
+
+image:
+  repository: docker.io/skitten11/education
+  pullPolicy: IfNotPresent
+  tag: 1.0.0
+
+service:
+  type: NodePort
+  nodePort: 30080
+  port: 8080
