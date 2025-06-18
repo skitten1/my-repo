@@ -1,6 +1,6 @@
 app:
   appLabel: education
-  replicaCount: 3
+  replicaCount: 2
   restartPolicy: Always
 
 image:
