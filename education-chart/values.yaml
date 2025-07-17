@@ -3,7 +3,7 @@ app:
   replicaCount: 3
 
 image:
-  repository: docker.io/skitten11/education
+  repository: registry.gitlab.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA
   pullPolicy: IfNotPresent
   tag: 1.0.0
 
