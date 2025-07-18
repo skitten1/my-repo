@@ -15,10 +15,10 @@ spec:
         "k8s-app": {{ .Values.app.appLabel }}
       name: {{ .Release.Name }}
     spec:
+      imagePullSecrets:
+        {{- toYaml .Values.imagePullSecrets | nindent 4 }}
       containers:
       - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: {{ .Release.Name }}
-      imagePullSecrets:
-        {{- toYaml .Values.imagePullSecrets | nindent 4 }}
         
